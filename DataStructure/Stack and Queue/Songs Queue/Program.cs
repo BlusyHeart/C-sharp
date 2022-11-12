@@ -6,7 +6,6 @@ class SongsQueue
 {
     static void Main()
     {
-       
         string[] songs = Console.ReadLine().Split(", ");
 
         Queue<string> songsQueue = new Queue<string>(songs);
@@ -19,10 +18,10 @@ class SongsQueue
             {
                 songsQueue.Dequeue();
             }
-            else if(command.Contains("Add"))
+            else if (command.Contains("Add"))
             {
-                 string songName = command.Split("Add ")[1];
-                
+                string songName = command.Split("Add ")[1];
+
                 if (songsQueue.Contains(songName))
                 {
                     Console.WriteLine($"{songName} is already contained!");
@@ -30,7 +29,7 @@ class SongsQueue
                 }
                 songsQueue.Enqueue(songName);
             }
-            else if(command == "Show")
+            else if (command == "Show")
             {
                 Console.WriteLine(string.Join(", ", songsQueue));
             }
