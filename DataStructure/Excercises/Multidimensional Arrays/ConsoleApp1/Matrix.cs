@@ -1,7 +1,7 @@
 ﻿
 namespace ConsoleApp1
 {
-    internal class Matrix
+    public class Matrix
     {
 
         private static int[,] CreateMatrix()
@@ -46,6 +46,20 @@ namespace ConsoleApp1
             }
 
             return matrix;
+        }
+
+        private static void PrintSumColumn(int[,] matrix)
+        {
+            for (int columns = 0; columns < matrix.GetLength(1); columns++)
+            {
+                int sum = 0;
+                for (int rows = 0; rows < matrix.GetLength(0); rows++)
+                {
+                    sum += matrix[rows, columns];
+
+                }
+                Console.WriteLine(sum);
+            }
         }
 
     }

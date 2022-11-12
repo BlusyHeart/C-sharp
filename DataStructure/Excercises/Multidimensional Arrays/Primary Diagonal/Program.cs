@@ -8,23 +8,22 @@ class Program
     {
         int[,] matrix = CreateMatrix();
         matrix = FillMatrix(matrix);
-
-        PrintSumColumn(matrix);
+       
+        Console.WriteLine(PrimaryDiagonalSum(matrix));
 
     }
 
-    private static void PrintSumColumn(int[,] matrix)
+    private static int PrimaryDiagonalSum(int[,] matrix)
     {
-        for (int columns = 0; columns < matrix.GetLength(1); columns++)
-        {
-            int sum = 0;
-            for (int rows = 0; rows < matrix.GetLength(0); rows++)
+        int primaryDiagonalSum = 0;
+        for (int rows = 0; rows < matrix.GetLength(0); rows++)
+        {           
+            for (int columns = rows; columns <= rows; columns++)
             {
-                sum += matrix[rows, columns];
-
+                primaryDiagonalSum += matrix[rows, columns];
             }
-            Console.WriteLine(sum);
         }
+        return primaryDiagonalSum;
     }
 
     private static int[,] FillMatrix(int[,] matrix)
@@ -47,14 +46,11 @@ class Program
 
     private static int[,] CreateMatrix()
     {
-        int[] matrixDimensions = Console.ReadLine()
-                    .Split(", ")
-                    .Select(int.Parse)
-                    .ToArray();
-
-        int rows = matrixDimensions[0];
-        int columns = matrixDimensions[1];
-        int[,] matrix = new int[rows, columns];
+        int matrixDimensions = int.Parse(Console.ReadLine());
+        int rows = matrixDimensions;
+        int cols = rows;
+                            
+        int[,] matrix = new int[rows, cols];
 
         return matrix;
     }
