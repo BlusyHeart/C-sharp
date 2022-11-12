@@ -8,7 +8,7 @@ class Program
     {
         int[,] matrix = CreateMatrix();
         matrix = FillMatrix(matrix);
-       
+
         Console.WriteLine(PrimaryDiagonalSum(matrix));
 
     }
@@ -17,7 +17,7 @@ class Program
     {
         int primaryDiagonalSum = 0;
         for (int rows = 0; rows < matrix.GetLength(0); rows++)
-        {           
+        {
             for (int columns = rows; columns <= rows; columns++)
             {
                 primaryDiagonalSum += matrix[rows, columns];
@@ -49,7 +49,7 @@ class Program
         int matrixDimensions = int.Parse(Console.ReadLine());
         int rows = matrixDimensions;
         int cols = rows;
-                            
+
         int[,] matrix = new int[rows, cols];
 
         return matrix;
