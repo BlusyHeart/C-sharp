@@ -32,7 +32,7 @@ class Program
         for (int rows = 0; rows < matrix.GetLength(0); rows++)
         {
             int[] input = Console.ReadLine()
-            .Split()
+            .Split(", ")
             .Select(int.Parse)
             .ToArray();
 

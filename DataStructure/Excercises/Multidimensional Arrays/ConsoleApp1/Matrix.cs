@@ -70,5 +70,22 @@ namespace ConsoleApp1
             return primaryDiagonalSum;
         }
 
+        private static string FindSymbol(char[,] matrix, char symbol)
+        {
+            for (int rows = 0; rows < matrix.GetLength(0); rows++)
+            {
+                for (int columns = 0; columns < matrix.GetLength(1); columns++)
+                {
+                    char currentSymbol = matrix[rows, columns];
+                    if (symbol == currentSymbol)
+                    {
+                        return $"({rows}, {columns})";
+
+                    }
+                }
+            }
+            return null;
+        }
+
     }
 }
