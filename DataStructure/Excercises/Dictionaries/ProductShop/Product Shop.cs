@@ -20,15 +20,13 @@ class Program
             string[] data = input.Split(", ", StringSplitOptions.RemoveEmptyEntries);
 
             string shopName = data[0];
-            AddShopName(shops, shopName);
-
+            AddShop(shops, shopName);   
+            
             string product = data[1];
             double price = double.Parse(data[2]);
-            AddProduct(shops, shopName, product, price);
+            shops[shopName].Add(product, price);
         }
-
         PrintShopDetails(shops);
-
     }
 
     private static void PrintShopDetails(SortedDictionary<string, Dictionary<string, double>> shops)
@@ -42,17 +40,7 @@ class Program
             }
         }
     }
-
-    private static void AddProduct(SortedDictionary<string, Dictionary<string, double>> shops, string shopName, string product, double price)
-    {
-        if (!shops[shopName].ContainsKey(product))
-        {
-            shops[shopName].Add(product, 0);
-        }
-        shops[shopName][product] = price;
-    }
-
-    private static void AddShopName(SortedDictionary<string, Dictionary<string, double>> shops, string shopName)
+    private static void AddShop(SortedDictionary<string, Dictionary<string, double>> shops, string shopName)
     {
         if (!shops.ContainsKey(shopName))
         {
