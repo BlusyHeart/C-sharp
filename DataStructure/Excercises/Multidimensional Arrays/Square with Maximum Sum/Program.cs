@@ -8,34 +8,12 @@ class Program
     {
         int[,] matrix = CreateMatrix();
         matrix = FillMatrix(matrix);
-       
+
         int sum = 0;
         int maxSubMatrixSum = int.MinValue;
         int[,] subMatrix = new int[2, 2];
-        
+        int maxSqareMatrixSum = FindMaxSquareSum(matrix, sum, maxSubMatrixSum, subMatrix);
 
-        for (int rows = matrix.GetLength(0) - 1; rows > 0; rows--)
-        {
-            for (int columns = matrix.GetLength(1) - 1; columns > 0; columns--)
-            {
-                sum += matrix[rows, columns]
-                    + matrix[rows, columns - 1]
-                    + matrix[rows - 1, columns - 1]
-                    + matrix[rows - 1, columns];
-
-                if (sum > maxSubMatrixSum)
-                {
-                    maxSubMatrixSum = sum;
-                    subMatrix[0,0] = matrix[rows - 1, columns - 1];
-                    subMatrix[0, 1] = matrix[rows - 1, columns];
-                    subMatrix[1, 0] = matrix[rows, columns - 1];
-                    subMatrix[1, 1] = matrix[rows, columns];
-
-                }
-                sum = 0;
-            }
-           
-        }
         for (int rows = 0; rows < subMatrix.GetLength(0); rows++)
         {
             for (int cols = 0; cols < subMatrix.GetLength(1); cols++)
@@ -47,6 +25,33 @@ class Program
         }
         Console.WriteLine(maxSubMatrixSum);
 
+    }
+
+    private static int FindMaxSquareSum(int[,] matrix, int sum, int maxSubMatrixSum, int[,] subMatrix)
+    {
+        for (int rows = matrix.GetLength(0) - 1; rows > 0; rows--)
+        {
+            for (int columns = matrix.GetLength(1) - 1; columns > 0; columns--)
+            {
+                sum += matrix[rows, columns]
+                    + matrix[rows, columns - 1]
+                    + matrix[rows - 1, columns - 1]
+                    + matrix[rows - 1, columns];
+
+                if (sum >= maxSubMatrixSum)
+                {
+                    maxSubMatrixSum = sum;
+                    subMatrix[0, 0] = matrix[rows - 1, columns - 1];
+                    subMatrix[0, 1] = matrix[rows - 1, columns];
+                    subMatrix[1, 0] = matrix[rows, columns - 1];
+                    subMatrix[1, 1] = matrix[rows, columns];
+
+                }
+                sum = 0;
+            }
+
+        }
+        return maxSubMatrixSum;
     }
 
     private static int[,] CreateMatrix()
