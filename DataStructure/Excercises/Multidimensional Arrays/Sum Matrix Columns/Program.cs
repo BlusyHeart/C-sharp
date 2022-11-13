@@ -7,7 +7,7 @@ class Program
     static void Main()
     {
         int[,] matrix = CreateMatrix();
-        matrix = FillMatrix(matrix);
+        FillMatrix(matrix);
 
         PrintSumColumn(matrix);
 
