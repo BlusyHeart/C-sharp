@@ -19,9 +19,13 @@ namespace ConsoleApp1
         }
         private static int[,] CreateMatrix()
         {
-            int matrixDimensions = int.Parse(Console.ReadLine());
-            int rows = matrixDimensions;
-            int cols = rows;
+            int [] matrixDimensions = Console.ReadLine()
+                .Split()
+                .Select(int.Parse)
+                .ToArray();
+
+            int rows = matrixDimensions[0];
+            int cols = matrixDimensions[1];
 
             int[,] matrix = new int[rows, cols];
 
@@ -44,8 +48,10 @@ namespace ConsoleApp1
         {
             for (int rows = 0; rows < matrix.GetLength(0); rows++)
             {
-                char[] input = Console.ReadLine()
-                    .ToCharArray();
+                int[] input = Console.ReadLine()
+                    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)
+                    .ToArray();
                 
                 for (int columns = 0; columns < matrix.GetLength(1); columns++)
                 {

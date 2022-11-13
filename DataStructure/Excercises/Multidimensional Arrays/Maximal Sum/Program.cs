@@ -16,7 +16,7 @@ class Program
 
     }
 
-    private static void FindMaxSubMatrix(int[,] matrix,  int maxSubMatrixSum, int startIndex, int endIndex, int sum)
+    private static void FindMaxSubMatrix(int[,] matrix, int maxSubMatrixSum, int startIndex, int endIndex, int sum)
     {
         for (int row = 0; row < matrix.GetLength(0) - 2; row++)
         {
@@ -48,7 +48,7 @@ class Program
                                      + matrix[row + 2, col + 1]
                                      + matrix[row + 2, col + 2];
 
-       
+
 
         return sum;
     }
