@@ -9,8 +9,8 @@ class Program
         int[,] matrix = CreateMatrix();
         FillMatrix(matrix);
 
-        Console.WriteLine(SecondoryDiagonal(matrix) - PrimaryDiagonalSum(matrix));
-        
+        Console.WriteLine(Math.Abs(SecondoryDiagonal(matrix) - PrimaryDiagonalSum(matrix)));
+
     }
 
     private static int PrimaryDiagonalSum(int[,] matrix)

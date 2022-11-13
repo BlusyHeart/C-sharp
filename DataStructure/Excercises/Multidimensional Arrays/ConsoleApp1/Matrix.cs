@@ -44,11 +44,8 @@ namespace ConsoleApp1
         {
             for (int rows = 0; rows < matrix.GetLength(0); rows++)
             {
-                int[] input = Console.ReadLine()
-                    .Split()
-                    .Select(int.Parse)
-                    .ToArray();
-                        
+                char[] input = Console.ReadLine()
+                    .ToCharArray();
                 
                 for (int columns = 0; columns < matrix.GetLength(1); columns++)
                 {
