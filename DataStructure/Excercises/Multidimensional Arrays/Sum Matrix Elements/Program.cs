@@ -8,7 +8,7 @@ class Program
     {
         
         int [,]matrix = CreateMatrix();  
-        matrix = FillMatrix(matrix);
+        FillMatrix(matrix);
 
         Console.WriteLine(Sum(matrix));
 
