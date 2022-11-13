@@ -3,6 +3,20 @@ namespace ConsoleApp1
 {
     public class Matrix
     {
+        private static int[][] CreateJaggedArray()
+        {
+            int rows = int.Parse(Console.ReadLine());
+            int[][] jaggedArray = new int[rows][];
+
+            for (int row = 0; row < jaggedArray.Length; row++)
+            {
+                jaggedArray[row] = Console.ReadLine()
+                    .Split()
+                    .Select(int.Parse)
+                    .ToArray();
+            }
+            return jaggedArray;
+        }
         private static int[,] CreateMatrix()
         {
             int matrixDimensions = int.Parse(Console.ReadLine());
@@ -30,8 +44,11 @@ namespace ConsoleApp1
         {
             for (int rows = 0; rows < matrix.GetLength(0); rows++)
             {
-                char[] input = Console.ReadLine()
-                .ToCharArray();          
+                int[] input = Console.ReadLine()
+                    .Split()
+                    .Select(int.Parse)
+                    .ToArray();
+                        
                 
                 for (int columns = 0; columns < matrix.GetLength(1); columns++)
                 {
@@ -53,6 +70,13 @@ namespace ConsoleApp1
 
                 }
                 Console.WriteLine(sum);
+            }
+        }
+        private static void PrintJaggedArray(int[][] jaggeArray)
+        {
+            for (int row = 0; row < jaggeArray.Length; row++)
+            {
+                Console.WriteLine(string.Join(" ", jaggeArray[row]));
             }
         }
 
