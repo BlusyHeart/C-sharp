@@ -7,7 +7,7 @@ class Program
     static void Main()
     {
         int[,] matrix = CreateMatrix();
-        matrix = FillMatrix(matrix);
+        FillMatrix(matrix);
 
         PrintSumColumn(matrix);
 
@@ -27,7 +27,7 @@ class Program
         }
     }
 
-    private static int[,] FillMatrix(int[,] matrix)
+    private static void FillMatrix(int[,] matrix)
     {
         for (int rows = 0; rows < matrix.GetLength(0); rows++)
         {

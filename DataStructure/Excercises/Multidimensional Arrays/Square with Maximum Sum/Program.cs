@@ -7,8 +7,13 @@ class Program
     static void Main()
     {
         int[,] matrix = CreateMatrix();
+<<<<<<< HEAD
         matrix = FillMatrix(matrix);
 
+=======
+        FillMatrix(matrix);
+       
+>>>>>>> 11e3444112efe25466a0b256fe01d6b35b3b14d9
         int sum = 0;
         int maxSubMatrixSum = int.MinValue;
         int[,] subMatrix = new int[2, 2];
@@ -68,7 +73,7 @@ class Program
         return matrix;
     }
 
-    private static int[,] FillMatrix(int[,] matrix)
+    private static void FillMatrix(int[,] matrix)
     {
         for (int rows = 0; rows < matrix.GetLength(0); rows++)
         {

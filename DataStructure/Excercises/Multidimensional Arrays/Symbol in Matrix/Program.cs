@@ -7,7 +7,7 @@ class Program
     static void Main()
     {
         char[,] matrix = CreateMatrix();
-        matrix = FillMatrix(matrix);
+        FillMatrix(matrix);
         char symbol = char.Parse(Console.ReadLine());
 
         string result = FindSymbol(matrix, symbol);
@@ -55,7 +55,7 @@ class Program
         return matrix;
     }
 
-    private static char[,] FillMatrix(char[,] matrix)
+    private static void FillMatrix(char[,] matrix)
     {
         for (int rows = 0; rows < matrix.GetLength(0); rows++)
         {
