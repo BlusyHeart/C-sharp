@@ -18,6 +18,9 @@ class Program
         // iterate through text
 
         TextIterator(text, symbols);
+
+        // print symbols and their count
+
         PrintSymbols(symbols);
 
     }
@@ -26,7 +29,7 @@ class Program
     {
         foreach (KeyValuePair<char, int> symbol in symbols)
         {
-            Console.WriteLine($"{symbol.Key}: {symbol.Value} times/s");
+            Console.WriteLine($"{symbol.Key}: {symbol.Value} time/s");
         }
     }
 
