@@ -17,7 +17,7 @@ class Program
 
     }
 
-    private static void PrintMissedGuestsCount(HashSet<string> reservations) => Console.WriteLine(reservations.Count);    
+    private static void PrintMissedGuestsCount(HashSet<string> reservations) => Console.WriteLine(reservations.Count);
     private static void PrintMissedGuests(HashSet<string> reservations)
     {
         PrintVIP(reservations);
@@ -76,7 +76,7 @@ class Program
             {
                 break;
             }
-           
+
             else if (input.Length != 8)
             {
                 continue;
@@ -87,5 +87,5 @@ class Program
             }
         }
     }
-  
+
 }
