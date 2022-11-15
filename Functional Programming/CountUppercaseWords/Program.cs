@@ -9,7 +9,7 @@ class Program
         Func<string, bool> startsWithUpperCase = word => char.IsUpper(word[0]);
        
         List<string> text = Console.ReadLine()
-            .Split(new[] {',',',','.',' '}, StringSplitOptions.RemoveEmptyEntries)
+            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
             .Where(startsWithUpperCase)
             .ToList();
 
