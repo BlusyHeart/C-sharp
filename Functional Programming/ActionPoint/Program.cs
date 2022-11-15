@@ -6,18 +6,13 @@ class Program
 {
     static void Main()
     {
-        string[] names = Console.ReadLine().Split();
+        Action<string[]> printer = names
+            => Console.WriteLine(string.Join(Environment.NewLine, names));
 
-        Action<string> printer = name => Console.WriteLine(name);
-        Print(names, printer);
+        string[] input = Console.ReadLine().Split();
 
+        printer(input);
+        
     }
 
-    private static void Print(string[] names, Action<string> printer)
-    {
-        foreach (string name in names)
-        {
-            printer(name);
-        }
-    }
 }
