@@ -14,13 +14,6 @@ class Program
             .ToList();
 
         Console.WriteLine(String.Join(", ", numbers));
-            
-
-
-        
-
-
-       
     }
     
 }
