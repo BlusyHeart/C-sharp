@@ -6,14 +6,13 @@ class Program
 {
     static void Main()
     {
-
         Action<int[]> printer = numbers => Console.WriteLine(String.Join(" ", numbers));
         Func<int, int[], bool> isDivisbile = (number, dividers) =>
         {          
             foreach (int divider in dividers)
             {
                 bool isDivisbile = false;
-                if (number % divider == 0)
+                if (number % divider == 0) 
                 {
                     isDivisbile = true;                   
                 }
