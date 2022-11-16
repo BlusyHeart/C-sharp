@@ -31,6 +31,12 @@ namespace CarManufacturer
             this.FuelConsumption = fuelConsumption;
         }
 
+        public Car(string make, string model, int year, double fuelConsumption, double fuelQuantity, Engine engine, Tire[] tire) : this(make, model, year, fuelConsumption, fuelQuantity)
+        {
+            Engine = engine;
+            Tire = tire;
+        }
+
         public string Make { get; set; }
 
         public string Model { get; set; }
@@ -40,6 +46,10 @@ namespace CarManufacturer
         public double FuelConsumption { get; set; }
 
         public double FuelQuantity { get; set; }
+
+        public Engine Engine { get; set; }
+
+        public Tire[] Tire { get; set; }
 
         public void Drive(double distance)
         {
