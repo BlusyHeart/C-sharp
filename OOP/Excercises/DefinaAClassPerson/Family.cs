@@ -23,7 +23,8 @@ namespace DefiningClasses
 
         public List<Person> GetOlderThen30Years()
         {
-            List<Person> filterFamalyMembers = FamilyMembers.Where(member => member.Age > 30).ToList();
+            Predicate<Person> predicate = member => member.Age > 30;
+            List<Person> filterFamalyMembers = FamilyMembers.Where(member => predicate(member)).ToList();
             return filterFamalyMembers;
         }
         public void PrintMember(List<Person> persons)
