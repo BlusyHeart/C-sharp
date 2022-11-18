@@ -20,6 +20,13 @@ namespace GenericBoxofString
             DataStorage.Add(element);
         }
 
+        public void Swap(int firstIndex, int secondIndex)
+        {
+            T temp = DataStorage[firstIndex];
+            DataStorage[firstIndex] = DataStorage[secondIndex];
+            DataStorage[secondIndex] = temp;
+        }
+
         public override string ToString()
         {
           StringBuilder stringBuilder = new StringBuilder();
