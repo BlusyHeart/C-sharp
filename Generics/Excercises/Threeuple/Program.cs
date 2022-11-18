@@ -9,17 +9,17 @@ namespace Threeuple
         public static void Main()
         {
             PrintThreeuple1();
-            PrintTuple2();
-            PrintTuple3();
+            PrintThreeuple2();
+            PrintThreeuple3();
         }
 
-        private static void PrintTuple3()
+        private static void PrintThreeuple3()
         {
-            Threeuple<string, double, string> threeuple = CreateTuple3();
+            Threeuple<string, double, string> threeuple = CreateThreeuple3();
             Console.WriteLine($"{threeuple.Item1} -> {threeuple.Item2} -> {threeuple.Item3}");
         }
 
-        private static Threeuple<string, double, string> CreateTuple3()
+        private static Threeuple<string, double, string> CreateThreeuple3()
         {
             string[] input2 = Console.ReadLine().Split();
             string name = input2[0];
@@ -29,22 +29,22 @@ namespace Threeuple
             return threeuple;
         }
 
-        private static void PrintTuple2()
+        private static void PrintThreeuple2()
         {
-            Threeuple<string, int, string> threeuple = CreateTuple2();
+            Threeuple<string, int, string> threeuple = CreateThreeuple2();
             bool isAbleToDrink = false;
             if (threeuple.Item3 == "drunk")
             {
                 isAbleToDrink = true;
                 Console.WriteLine($"{threeuple.Item1} -> {threeuple.Item2} -> {isAbleToDrink}");
-            }           
+            }
             else
-            {               
+            {
                 Console.WriteLine($"{threeuple.Item1} -> {threeuple.Item2} -> {isAbleToDrink}");
             }
         }
 
-        private static Threeuple<string, int, string> CreateTuple2()
+        private static Threeuple<string, int, string> CreateThreeuple2()
         {
             string[] input1 = Console.ReadLine().Split();
             string name = input1[0];
