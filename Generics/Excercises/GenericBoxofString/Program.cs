@@ -16,18 +16,10 @@ namespace GenericBoxofString
                 string input = Console.ReadLine();               
                 box.Add(input);               
             }
+            string targetElement = Console.ReadLine();
 
-            int[] indexs = Console.ReadLine()
-                .Split()
-                .Select(int.Parse)
-                .ToArray();
-
-            int firstIndex = indexs[0];
-            int secondIndex= indexs[1];
-
-            box.Swap(firstIndex, secondIndex);
-
-            Console.WriteLine(box);
+            int counter = box.CountGreaterThen(targetElement);
+            Console.WriteLine(counter);
         }
     }
 

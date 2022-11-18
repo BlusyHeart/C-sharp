@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GenericBoxofString
 {
-    public class Box<T>
+    public class Box<T> where T : IComparable
     {
         public Box()
         {
@@ -25,6 +25,19 @@ namespace GenericBoxofString
             T temp = DataStorage[firstIndex];
             DataStorage[firstIndex] = DataStorage[secondIndex];
             DataStorage[secondIndex] = temp;
+        }
+
+        public int CountGreaterThen(T element)
+        {
+            int count = 0;
+            foreach (T item in DataStorage)
+            {
+                if (item.CompareTo(element) > 0)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
 
         public override string ToString()
