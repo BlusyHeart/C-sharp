@@ -9,21 +9,19 @@ namespace IteratorsAndComparators
         static void Main()
         {
 
-            Book bookOne = new Book("Animal Farm", 2003);
-            Book bookTwo = new Book("Animal Farm", 2003);
-            Book bookThree = new Book("Animal Farm", 2003);
-            Book bookFour = new Book("Animal Farm", 2003);
+            Book bookOne = new Book("Animal Farm", 2003, "George Orwell");
+            Book bookTwo = new Book("The Documents in the Case", 2002, "Dorothy Sayers", "Robert Eustace");
+            Book bookThree = new Book("The Documents in the Case", 1930);
 
-            List<Book> books = new List<Book>();
-            Library libraryOne = new Library();
-            libraryOne.Add(bookOne);
-            libraryOne.Add(bookTwo);
-            libraryOne.Add(bookThree);
-            libraryOne.Add(bookFour);
-
-            foreach (Book book in libraryOne)
+            Library libraryTwo = new Library()
             {
-                Console.WriteLine(book.Year);
+                bookTwo, bookOne, bookThree
+            };
+            libraryTwo.Sort();
+
+            foreach (var book in libraryTwo)
+            {                
+                Console.WriteLine(book);
             }
         }
     }
