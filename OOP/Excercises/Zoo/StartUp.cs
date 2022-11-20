@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace Zoo.Animal
+{
+    public class StartUp
+    {
+        public static void Main(string[] args)
+        {
+
+        }
+    }
+}
