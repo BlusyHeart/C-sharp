@@ -27,6 +27,7 @@ namespace PersonsInfo
                 team.AddPlayer(person);
             }
             PrintPerson(persons);
+           
             Console.WriteLine(team.FirstTeam.Count);
             Console.WriteLine(team.SecondTeam.Count);
         }

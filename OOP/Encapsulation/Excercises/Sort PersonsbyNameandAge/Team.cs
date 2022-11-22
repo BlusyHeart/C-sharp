@@ -16,9 +16,12 @@ namespace PersonsInfo
         }
 
         private List<Person> firstTeam;
+
         private List<Person> secondTeam;
         public string Name { get; private set; }
+
         public IReadOnlyCollection<Person> SecondTeam => this.secondTeam;
+
         public IReadOnlyCollection<Person> FirstTeam => this.firstTeam;
 
         public void AddPlayer(Person person)
@@ -32,6 +35,5 @@ namespace PersonsInfo
                 secondTeam.Add(person);
             }
         }
-       
     }
 }
