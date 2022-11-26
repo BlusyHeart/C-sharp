@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,7 +8,6 @@ namespace StreeRacing
     {
         static void Main()
         {
-
             int matrixRows = int.Parse(Console.ReadLine());
 
             char[][] beach = new char[matrixRows][];
@@ -58,8 +56,8 @@ namespace StreeRacing
             }
 
             PrintBeach(beach);
-            Console.WriteLine(collectionTokens.Sum());
-            Console.WriteLine(oppositeTokens.Sum());
+            Console.WriteLine($"Collected tokens: {collectionTokens.Sum()}");
+            Console.WriteLine($"Opponent's tokens: {oppositeTokens.Sum()}");
 
         }
 
