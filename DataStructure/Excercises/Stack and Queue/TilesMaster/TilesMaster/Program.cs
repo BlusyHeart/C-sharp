@@ -88,7 +88,7 @@ namespace TilesMaster
                  tilesTracker
                 .OrderByDescending(l => l.Value)
                 .ThenBy(l => l.Key)
-                ToDictionary(l => l.Key, l => l.Value);
+                .ToDictionary(l => l.Key, l => l.Value);
 
 
             foreach (KeyValuePair <string, int> location in sortedLocations)
