@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="C:\Users\User\Desktop\GitHub\C-sharp\OOP\Excercises\CarRacing\Map.cs" Link="Map.cs" />
+  </ItemGroup>
+
+</Project>
